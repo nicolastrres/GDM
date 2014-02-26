@@ -50,7 +50,7 @@ public class CalculateFinalWeightsSaaty {
         for(int j=0; j<StructursDecisors.names.size(); j++)
             for(int i=0; i<Structurs.names.size(); i++){
                 pesos[j]=pesos[j]+matrizDecisores[i][j]*eigenvectorCriterios[i];
-            }
+            }http://docs.oracle.com/javase/tutorial/deployment/jar/intro.html
         for(int i=0 ; i<StructursDecisors.names.size(); i++)
             StructursDecisors.weightsDecisors.add(pesos[i]);
         return pesos;

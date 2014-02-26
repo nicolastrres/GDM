@@ -4,11 +4,11 @@
  */
 package Data;
 
-import Graphics.Trapecio;
+import Trapezes.Trapeze;
 import java.util.ArrayList;
 
 
 public class Trap {
-    public static ArrayList<Trapecio> trapecios;
+    public static ArrayList<Trapeze> trapecios;
     public static ArrayList cgs;
 }

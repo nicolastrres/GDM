@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Graphics;
+package Trapezes;
 
 import ZuoMethod.Calculate.MainZuo;
 import java.awt.BorderLayout;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
  *
  * @author agustin
  */
-public class Ventana extends JPanel{
+public class TrapezeWindow extends JPanel{
         private JTextField txtCentroGrav;
 	private JTextField txtLongMenor;
 	private JTextField txtPtoA;
@@ -33,11 +33,11 @@ public class Ventana extends JPanel{
 	private JTextField txtPtoD;
         private JPanel pnlCalculate;
 	private JPanel pnlChart;
-        public Ventana() {
+        public TrapezeWindow() {
 		super();
                 Trap.cgs=new ArrayList();
                 pnlCalculate = new JPanel();
-                Trap.trapecios=(ArrayList<Trapecio>) new ArrayList();
+                Trap.trapecios=(ArrayList<Trapeze>) new ArrayList();
                 this.setLayout(null);
 		setBounds(100, 100, 800, 319);
                 setBackground(new java.awt.Color(254, 254, 254));
@@ -172,10 +172,10 @@ public class Ventana extends JPanel{
 		pnlChart.setVisible(true);
 	}
         public void eventGraficar(){
-            Trapecio trap;
+            Trapeze trap;
 				try {
                                         Trap.cgs.add(Double.parseDouble(txtCentroGrav.getText()));
-					trap = Trapecio.crearTrapecioCentroGravedad(
+					trap = Trapeze.crearTrapecioCentroGravedad(
 					Double.parseDouble(txtCentroGrav.getText()));
 					txtPtoA.setText(trap.getPtoA()[0] + "; "
 							+ trap.getPtoA()[1]);
@@ -185,7 +185,7 @@ public class Ventana extends JPanel{
 							+ trap.getPtoC()[1]);
 					txtPtoD.setText(trap.getPtoD()[0] + "; "
 							+ trap.getPtoD()[1]);
-					MainTrapecio.agregarTrapecio(trap);
+					MainTrapeze.agregarTrapecio(trap);
                                         Trap.trapecios.add(trap);
 				} catch (NumberFormatException e1) {
 					JOptionPane.showMessageDialog(null, "Parse Error", "Error",
@@ -200,9 +200,9 @@ public class Ventana extends JPanel{
         
         public void eventGraficarUltimoTrapecio(){
             MainZuo m = new MainZuo();
-                         Trapecio trap;
+                         Trapeze trap;
                          try {          
-					trap = Trapecio.crearTrapecioCentroGravedad(
+					trap = Trapeze.crearTrapecioCentroGravedad(
 					((m.main().getPtoC()[0]+m.main().getPtoB()[0])/2));
                                       //  System.out.println(trap.getPtoB()[0]);
                                       //  System.out.println(trap.getPtoC()[0]);
@@ -215,7 +215,7 @@ public class Ventana extends JPanel{
 					txtPtoD.setText(m.main().getPtoD()[0] + "; "
 							+ m.main().getPtoD()[1]);
 					Trap.trapecios.add(m.main());
-                                        MainTrapecio.agregarTrapecio(m.main());
+                                        MainTrapeze.agregarTrapecio(m.main());
                                         
                                         
 				} catch (NumberFormatException e1) {

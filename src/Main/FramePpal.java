@@ -5,12 +5,12 @@
 package Main;
 import Data.Structurs;
 import Data.StructursDecisors;
-import Graphics.MainTrapecio;
+import Trapezes.MainTrapeze;
 import RankingDecisors.PanelRankingDecisors;
 import SaatyDecisors.GUI.*;
 import Saaty.Criteria.PanelSaatyMatriz;
 import Saaty.Criteria.saatyGuiEvents;
-import Transforming.PesosFinalesSaty;
+import Transforming.CalculateFinalWeightsSaaty;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public class FramePpal extends javax.swing.JFrame {
         /////////////////////////////////////////////////////////////////
         this.add(panelSaaty);
         this.getContentPane().setLayout(null);
-        mainTrap=new MainTrapecio(this);
+        mainTrap=new MainTrapeze(this);
         datas = new Structurs();
         index=-1; //numero de panel seleccionado
         i=0;
@@ -248,15 +248,15 @@ public class FramePpal extends javax.swing.JFrame {
                     StructursDecisors.weightsDecisors=new ArrayList();
                     for(int j=0; j<n; j++)
                         StructursDecisors.weightsDecisors.add(weightsFinal[j]);
-                    MainTrapecio.ventana.setVisible(true);   
+                    MainTrapeze.ventana.setVisible(true);   
                 }
                 else{
-                    MainTrapecio.ventana.setVisible(true);   
+                    MainTrapeze.ventana.setVisible(true);   
                 }
             }
         }
         else{
-          MainTrapecio.ventana.setVisible(true);   
+          MainTrapeze.ventana.setVisible(true);   
         }
     }
     private void goToPanelRankingDecisors(int n){
@@ -265,7 +265,7 @@ public class FramePpal extends javax.swing.JFrame {
                 matrixDecisors=new DecisorsMatrix();
                 matrixDecisors.createMatrix();
                 boolConsistenceDecisors=consistenceDecisors.calculateConsistence();
-                PesosFinalesSaty p = new PesosFinalesSaty();
+                CalculateFinalWeightsSaaty p = new CalculateFinalWeightsSaaty();
                 p.calcularPesos();
                 for(int i=0; i<StructursDecisors.weightsDecisors.size(); i++)
                     System.out.println("Peso Decisor ["+i+"]="+StructursDecisors.weightsDecisors.get(i));
@@ -312,7 +312,7 @@ public class FramePpal extends javax.swing.JFrame {
     }
     
     Structurs datas;
-    MainTrapecio mainTrap;
+    MainTrapeze mainTrap;
     ArrayList <PanelSaatyDecisorsMatriz> panels;
     PanelSaatyMatriz panelSaaty;
     int index;

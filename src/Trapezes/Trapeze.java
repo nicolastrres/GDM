@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Graphics;
+package Trapezes;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -20,7 +20,7 @@ import org.jfree.data.xy.XYSeriesCollection;
  *
  * @author agustin
  */
-public class Trapecio {
+public class Trapeze {
 
 	private static int m=5;
 	private double[] ptoA = new double[2];
@@ -29,7 +29,7 @@ public class Trapecio {
 	private double[] ptoD = new double[2];
 	
 	
-	public Trapecio(double[] ptoA, double[] ptoB, double[] ptoC, double[] ptoD) {
+	public Trapeze(double[] ptoA, double[] ptoB, double[] ptoC, double[] ptoD) {
 	
 		this.ptoA = ptoA;
 		this.ptoB = ptoB;
@@ -92,7 +92,7 @@ public class Trapecio {
 		this.ptoD = ptoD;
 	}
 	
-	public static Trapecio crearTrapecioCentroGravedad(double centroGravedad) throws Exception{
+	public static Trapeze crearTrapecioCentroGravedad(double centroGravedad) throws Exception{
 		
 		if(centroGravedad>2*m || centroGravedad<0){
 			throw new Exception("centro de gravedad mayor a m, o menor a 0");
@@ -104,7 +104,7 @@ public class Trapecio {
 		double[] ptoD = {valores[3],0};
 		double[] ptoB = {valores[1],1};
 		double[] ptoC = {valores[2],1};
-		return(new Trapecio(ptoA,ptoB,ptoC,ptoD));
+		return(new Trapeze(ptoA,ptoB,ptoC,ptoD));
 		
 	}
 
@@ -131,7 +131,7 @@ public class Trapecio {
 		}
 	}
 	
-    public static JFreeChart graficarTrapecios(ArrayList<Trapecio> trapecios) {
+    public static JFreeChart graficarTrapecios(ArrayList<Trapeze> trapecios) {
 		
 		XYSeriesCollection dataset = new XYSeriesCollection();
 		for(int i=0; i<trapecios.size(); i++){

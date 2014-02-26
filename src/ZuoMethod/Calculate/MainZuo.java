@@ -6,7 +6,7 @@ package ZuoMethod.Calculate;
 import Data.StructursDecisors;
 import Data.Trap;
 import Data.ZuoMethodData;
-import Graphics.Trapecio;
+import Trapezes.Trapeze;
 import java.util.ArrayList;
 /**
  *
@@ -17,12 +17,12 @@ public class MainZuo {
         Double [] GravityCenters;
         Double [] WeightsDecisors;  
         
-       public Trapecio main(){
+       public Trapeze main(){
         //Trapezes = {{8.0,8.5,9.5,10.0,1.0},{1.2,2.15,4.05,5.0,1.0},{5.0,5.25,5.75,6.0,1.0},{5.0,6.25,8.75,10.0,1.0}};
         //GravityCenters = {9.0,3.1,5.5,7.5};
         //WeightsDecisors = {0.260,0.202,0.217,0.321};
         
-        Trapecio trapecioAux;
+        Trapeze trapecioAux;
         double auxA[]=new double[2];
         double auxB[]=new double[2];
         double auxC[]=new double[2];
@@ -59,7 +59,7 @@ public class MainZuo {
         auxC[1]=1.0;
         auxD[0]=ZuoMethodData.AgregationTotal[3];
         auxD[1]=0.0;
-        trapecioAux=new Trapecio(auxA, auxB, auxC, auxD);
+        trapecioAux=new Trapeze(auxA, auxB, auxC, auxD);
         return trapecioAux;
             
        }
@@ -70,7 +70,7 @@ public class MainZuo {
      * @param Trapecios
      * @return
      */
-    public double encontrarMax(ArrayList<Trapecio> Trapecios){
+    public double encontrarMax(ArrayList<Trapeze> Trapecios){
           double max=0;
            for(int i=0; i<Trapecios.size(); i++){
               if(max<Trapecios.get(i).getPtoD()[0])

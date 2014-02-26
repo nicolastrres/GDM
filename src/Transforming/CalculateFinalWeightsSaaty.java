@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
-public class PesosFinalesSaty {
+public class CalculateFinalWeightsSaaty {
     public void calcularPesos(){
        /* for(int i=0; i<StructursDecisors.eigenvector.size(); i++)
             System.out.println("Eigenvector["+i+"]="+StructursDecisors.eigenvector.get(i));
